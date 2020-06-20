@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; char- set=UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/main.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+<p>Mails :</p>
+<ul th:each="e : ${listeAdresses}">
+    <li th:text="${e}"/><br/>
+</ul>
+</body>
+</html>

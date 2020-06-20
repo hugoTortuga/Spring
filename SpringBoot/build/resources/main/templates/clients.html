@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; char- set=UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/main.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script type='text/javascript'>
+        function goToMail(e){
+            window.location.replace("../mails?id=" + e);
+        }
+        function editRow(e){
+            window.location.replace("../update?id=" + e);
+        }
+        function deleteRow(e){
+            window.location.replace("../delete?id=" + e);
+        }
+        function goToAdresse(e){
+            window.location.replace("../adresses?id=" + e);
+        }
+    </script>
+</head>
+<body>
+<h1>Contacts</h1>
+
+
+<table id="editTable">
+    <tbody>
+    <tr class="titre">
+        <th></th>
+        <th>Contact</th>
+        <th>Mail</th>
+        <th>Adresse</th>
+    </tr>
+    <tr th:each="e : ${listeClients}">
+        <td>
+            <a th:onclick="'javascript:editRow(\''+ ${e.id} +'\');'">
+                <img  width="25" height="25" src="https://img.icons8.com/cotton/64/6696e3/pen-1.png"
+                      class="icon" alt="Edit" title="Edit">
+            </a>
+            <a th:onclick="'javascript:deleteRow(\''+ ${e.id} +'\');'">
+                <img  width="25" height="25" src="https://img.icons8.com/ios/24/eb6574/delete-forever.png"
+                     class="icon" alt="Delete" title="Delete" >
+            </a>
+
+        </td>
+        <td th:text="${e}" />
+        <td>
+            <a class="buttonMail" th:text="${e.mails.size()} + ' mail(s)'"
+               th:onclick="'javascript:goToMail(\''+ ${e.id} +'\');'" ></a>
+        </td>
+        <td>
+            <a class="buttonMail" th:text="${e.adressesPostales.size()} + ' adresse(s)'"
+               th:onclick="'javascript:goToAdresse(\''+ ${e.id} +'\');'" ></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+*
+{
+    font-family: 'Montserrat', sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tr:nth-child(even)
+{
+  background-color: #ebebed;
+}
+.titre{
+    background-color : #4C8BF5;
+    color: #fff;
+}
+th, td{
+    padding : 5px;
+}
+
+.buttonMail
+{
+    padding : 3px;
+    border-radius: 6px;
+    background-color: #555555;
+    color : white;
+}

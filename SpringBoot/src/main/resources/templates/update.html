@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<body>
+<h1>Mise à jour</h1>
+<form  action="#" th:action="@{/update}" th:object="${personForm}" method="post">
+    <table id="myTable">
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{name}" /></td>
+            <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+        </tr>
+        <tr>
+            <td>Prénom:</td>
+            <td><input type="text" th:field="*{prenom}" /></td>
+            <td th:if="${#fields.hasErrors('prenom')}" th:errors="*{prenom}">Prenom Error</td>
+        </tr>
+    </table>
+    <button type="submit">Mettre à jour</button>
+
+</form>
+</body>
+</html>
