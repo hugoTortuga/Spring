@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; char- set=UTF-8" />
+    <title>Menu</title>
+    <link rel="stylesheet" th:href="@{/main.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
-    <title>Main page</title>
     <script type='text/javascript'>
         function afficherUser(){
             window.location.replace("../clients");
@@ -16,5 +19,9 @@
 <h1>Accueil</h1>
 <button onclick="javascript:afficherUser()">Afficher les contacts</button>
 <button onclick="javascript:creerUser()">Créer un contact</button>
+
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Se déconnecter"/>
+</form>
 </body>
 </html>

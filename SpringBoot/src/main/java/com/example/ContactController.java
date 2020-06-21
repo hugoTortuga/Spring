@@ -26,11 +26,17 @@ import java.util.List;
  * @since SpringBoot
  */
 @Controller
-public class WebController implements WebMvcConfigurer {
+public class ContactController implements WebMvcConfigurer {
 	private static final Logger log = LoggerFactory.getLogger(ServingWebContentApplication.class);
 
 	@Autowired
 	private CustomerRepository repository;
+
+	@Autowired
+	private AdressePostaleInterface adresseRepository;
+
+	@Autowired
+	private AdresseMailInterface mailRepository;
 
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
@@ -60,6 +66,7 @@ public class WebController implements WebMvcConfigurer {
 		return "redirect:/clients";
 	}
 
+
 	long idParam;
 
 	@GetMapping("/update")
@@ -88,31 +95,5 @@ public class WebController implements WebMvcConfigurer {
 		repository.deleteById(param);
 		return "redirect:/clients";
 	}
-
-	@GetMapping("/adresses")
-	public String mailsId(@RequestParam(name="id",required=false,defaultValue="0") long id, Model model)
-	{
-		model.addAttribute("id", id);
-		return "adresses";
-	}
-
-	@ModelAttribute("listeAdresses")
-	public List<String> getListeAdresses(@RequestParam(name="id",required=false,defaultValue="0") long id, Model model)
-	{
-		ArrayList<String> results = new ArrayList<String>();
-		Customer c = repository.findById(id);
-		if(c != null){
-			Collection<AdressePostale> mails = c.getAdressesPostales();
-			if(mails != null)
-				mails.forEach(e -> results.add(e.toString()));
-		}
-		if(results.size() == 0)
-			results.add("Aucune adresse postale");
-
-		return results;
-	}
-
-
-
 
 }

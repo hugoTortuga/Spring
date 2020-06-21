@@ -1,5 +1,7 @@
 package com.example.model;
 
+import org.hibernate.engine.internal.Cascade;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -26,10 +28,10 @@ public class Customer {
 		this.mails = mails;
 	}
 
-	@OneToMany(mappedBy = "customer")
+	@OneToMany(mappedBy = "customer", cascade={CascadeType.REMOVE})
 	private Collection<AdresseMail> mails ;
 
-	@ManyToMany
+	@ManyToMany(cascade={CascadeType.REMOVE})
 	private Collection<AdressePostale> adressesPostales ;
 
 

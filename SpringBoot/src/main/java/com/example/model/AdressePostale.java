@@ -23,9 +23,6 @@ public class AdressePostale {
 
     private int numRue;
 
-    @ManyToMany
-    private Collection<Customer> contacts;
-
     public Long getId() {
         return id;
     }
@@ -66,23 +63,8 @@ public class AdressePostale {
         this.numRue = numRue;
     }
 
-    public Collection<Customer> getContacts() {
-        return contacts;
-    }
-
-    public void setContacts(Collection<Customer> contacts) {
-        this.contacts = contacts;
-    }
-
     @Override
     public String toString() {
-        return "AdressePostale{" +
-                "id=" + id +
-                ", rue='" + rue + '\'' +
-                ", ville='" + ville + '\'' +
-                ", codePostal='" + codePostal + '\'' +
-                ", numRue=" + numRue +
-                ", contacts=" + contacts +
-                '}';
+        return  numRue + ' ' +  rue + ", " + ville + " (" +  codePostal + ')';
     }
 }

@@ -26,7 +26,7 @@ public class AdresseMail {
         this.customer = customer;
     }
 
-    protected AdresseMail() {
+    public AdresseMail() {
     }
 
     public AdresseMail(String _mail) {

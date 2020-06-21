@@ -2,7 +2,7 @@
 <html lang="fr" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; char- set=UTF-8" />
-    <title>Title</title>
+    <title>Contacts</title>
     <link rel="stylesheet" th:href="@{/main.css}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script type='text/javascript'>
@@ -18,9 +18,15 @@
         function goToAdresse(e){
             window.location.replace("../adresses?id=" + e);
         }
+         function menu(){
+            window.location.replace("../");
+        }
     </script>
 </head>
 <body>
+<button onclick="javascript:menu()">
+    Retour au menu
+</button>
 <h1>Contacts</h1>
 
 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>AJouter un mail</title>
+    <link rel="stylesheet" th:href="@{/main.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script type='text/javascript'>
+        function menu(){
+            window.location.replace("../");
+        }
+    </script>
+</head>
+<body>
+<h1>Ajouter un mail</h1>
+<button onclick="javascript:menu()">
+    Retour au menu
+</button>
+<form  action="#" th:action="@{/formMail}" th:object="${mailForm}" method="post">
+    <table id="myTable">
+        <tr>
+            <td>Mail:</td>
+            <td><input type="email" th:field="*{email}" /></td>
+            <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name Error</td>
+        </tr>
+        <button type="submit">Enregistrer</button>
+    </table>
+</form>
+
+
+
+
+</body>
+</html>

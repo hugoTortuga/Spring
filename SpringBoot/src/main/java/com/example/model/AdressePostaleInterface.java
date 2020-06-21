@@ -8,4 +8,6 @@ public interface AdressePostaleInterface extends CrudRepository<AdressePostale, 
 
     AdressePostale findById(long id);
 
+
+
 }

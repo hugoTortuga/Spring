@@ -2,6 +2,8 @@ package com.example;
 
 import com.example.model.Customer;
 import com.example.model.CustomerRepository;
+import com.example.model.User;
+import com.example.model.UserInterface;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -10,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 /**
- * @author Jason Mahdjoub
+ * @author Hugo Malglaive
  * @version 1.0
  * @since SpringBoot
  */
@@ -22,9 +24,8 @@ public class ServingWebContentApplication {
 		SpringApplication.run(ServingWebContentApplication.class, args);
 	}
 	@Bean
-	public CommandLineRunner demo(CustomerRepository repository) {
+	public CommandLineRunner demo(CustomerRepository repository, UserInterface userInter) {
 		return (args) -> {
-
 			// save a few customers
 			/*repository.save(new Customer("Jack", "Bauer"));
 			repository.save(new Customer("Chloe", "O'Brian"));

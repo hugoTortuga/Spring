@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Ajouter une adresse</title>
+    <link rel="stylesheet" th:href="@{/main.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"><script type='text/javascript'>
+
+        function menu(){
+            window.location.replace("../");
+        }
+    </script>
+</head>
+<body>
+<h1>Ajouter une adresse</h1>
+<button onclick="javascript:menu()">
+    Retour au menu
+</button>
+<form  action="#" th:action="@{/formAdresse}" th:object="${adresseForm}" method="post">
+    <table id="myTable">
+        <tr>
+            <td>Ville:</td>
+            <td><input type="text" th:field="*{ville}" /></td>
+            <td th:if="${#fields.hasErrors('ville')}" th:errors="*{ville}">Erreur ville</td>
+        </tr>
+        <tr>
+            <td>Code postal:</td>
+            <td><input type="text" th:field="*{codepostale}" /></td>
+            <td th:if="${#fields.hasErrors('codepostale')}" th:errors="*{codepostale}">Erreur code postal</td>
+        </tr>
+        <tr>
+            <td>Rue:</td>
+            <td><input type="text" th:field="*{rue}" /></td>
+            <td th:if="${#fields.hasErrors('rue')}" th:errors="*{rue}">Erreur rue</td>
+        </tr>
+        <tr>
+            <td>Numéro de rue:</td>
+            <td><input type="text" th:field="*{numRue}" /></td>
+            <td th:if="${#fields.hasErrors('numRue')}" th:errors="*{numRue}">Erreur numéro rue</td>
+        </tr>
+
+    </table>
+    <button type="submit">Enregistrer</button>
+</form>
+</body>
+</html>

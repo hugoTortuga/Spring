@@ -2,18 +2,34 @@
 <html lang="fr" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; char- set=UTF-8" />
-    <title>Title</title>
+    <title>Asdresses</title>
     <link rel="stylesheet" th:href="@{/main.css}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script type='text/javascript'>
+
+    function goToAdresse(e){
+        window.location.replace("../formAdresse?id=" + e);
+    }
+    function menu(){
+        window.location.replace("../");
+    }
+    </script>
 </head>
 <body>
+<button  onclick="javascript:menu();">
+    Retour au menu
+</button>
+<h1>
+    Adresses:
+</h1>
+
 <p>Mails :</p>
 <ul th:each="e : ${listeAdresses}">
     <li th:text="${e}"/><br/>
 </ul>
 
-<button>
-    Ajouter adresse (pas encore implémenté)
+<button  th:onclick="'javascript:goToAdresse(\''+ ${idContact} +'\');'">
+    Ajouter adresse
 </button>
 
 </body>

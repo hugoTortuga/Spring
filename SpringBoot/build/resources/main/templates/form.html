@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Créer un contact</title>
+    <link rel="stylesheet" th:href="@{/main.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script type='text/javascript'>
-        function addField(){
-            var form = document.getElementById("myTable").childNodes[1];
-            var tr=document.createElement("tr");
-            var td=document.createElement("td");
-            var input=document.createElement("input");
-            input.setAttribute("type", "text");
-            input.setAttribute("name", "addresses");
-            tr.appendChild(td);
-            td.appendChild(input);
-            form.appendChild(tr);
+
+        function menu(){
+            window.location.replace("../");
         }
     </script>
+</head>
 <body>
+<button onclick="javascript:menu()">
+    Retour au menu
+</button>
+<h1>Créer un contact</h1>
 <form  action="#" th:action="@{/form}" th:object="${personForm}" method="post">
     <table id="myTable">
         <tr>
-            <td>Name:</td>
+            <td>Nom:</td>
             <td><input type="text" th:field="*{name}" /></td>
             <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
         </tr>
@@ -26,8 +28,9 @@
             <td><input type="text" th:field="*{prenom}" /></td>
             <td th:if="${#fields.hasErrors('prenom')}" th:errors="*{prenom}">Prenom Error</td>
         </tr>
-    <button type="submit">Submit</button>
-
+    </table>
+    <button type="submit">Enregistrer</button>
 </form>
+
 </body>
 </html>
