@@ -6,7 +6,7 @@ Fonctionnalités du projet:
   
   -accès à une liste de contact par l'acceuil (http:localhost:8080/)
   
-  -connexion statique pour utiliser les autres fonctionnalités
+  -connexion statique pour utiliser les autres fonctionnalités (connexion à la BD commencé mais pas aboutie)
     
     User : user
     
