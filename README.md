@@ -15,7 +15,7 @@ Fonctionnalités du projet:
    (réalisé à partir des réponses de ce topic stackoverflow : https://stackoverflow.com/questions/49847791/java-spring-security-user-withdefaultpasswordencoder-is-deprecated)
    
    
-  -navigation au travers de toutes les pages grâce à des bouton Javascript et des redirections
+  -navigation au travers de toutes les pages grâce à des boutons Javascript et des redirections
    
   -création d'un contact
   
