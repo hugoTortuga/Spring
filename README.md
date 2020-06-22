@@ -33,8 +33,8 @@ Fonctionnalités du projet:
   
   -ajout d'une adresse postale à un contact
   
-  -Visualiser tous les contacts au format XML (http:/localhost:8080/xml
+  -Visualiser tous les contacts au format XML (http:/localhost:8080/xml)
   
-  ou un seul contact (http:/localhost:8080/xml?action=contact&id=UnNuméro
+  ou un seul contact (http:/localhost:8080/xml?action=contact&id=UnNuméro)
   
   *Made by Hugo Malglaive*
