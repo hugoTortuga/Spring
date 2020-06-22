@@ -24,4 +24,4 @@ Fonctionnalités du projet:
   
   -ajout d'une adresse postale à un contact
   
-  *Made by Hugo Malglaive
+  *Made by Hugo Malglaive*
