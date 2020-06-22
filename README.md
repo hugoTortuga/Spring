@@ -6,7 +6,13 @@ Fonctionnalités du projet:
   
   -accès à une liste de contact par l'acceuil (http:localhost:8080/)
   
-  -connexion statique pour utiliser les autres fonctionnalités (connexion à la BD commencé mais pas aboutie)
+  -accès à une base de donnée embarqué h2 à l'adresse http:localhost:8080/h2-console/
+  
+    User : admin
+    
+    Password : password
+  
+  -connexion statique pour utiliser les autres fonctionnalités du site (connexion avec une BD commencée mais pas aboutie(class user))
     
     User : user
     
@@ -26,5 +32,9 @@ Fonctionnalités du projet:
   -ajout d'une adresse mail à un contact
   
   -ajout d'une adresse postale à un contact
+  
+  -Visualiser tous les contacts au format XML (http:/localhost:8080/xml
+  
+  ou un seul contact (http:/localhost:8080/xml?action=contact&id=UnNuméro
   
   *Made by Hugo Malglaive*
