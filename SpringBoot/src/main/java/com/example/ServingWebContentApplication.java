@@ -28,15 +28,7 @@ public class ServingWebContentApplication {
 
 			Customer customer1 = new Customer("JP", "Smith");
 			repository.save(customer1);
-
 			Customer custo2 = new Customer("Jesus", "Christ");
-			ArrayList<AdresseMail> mails = new ArrayList<AdresseMail>();
-			AdresseMail am1 = new AdresseMail();
-			am1.setMail("jesus.christ@deus.univ");
-			AdresseMail am2 = new AdresseMail();
-			am2.setMail("jesus.christ@cnam.net");
-			mails.add(am1);
-			custo2.setMails(mails);
 			repository.save(custo2);
 			repository.save(new Customer("Arnold", "Schwarzi"));
 
