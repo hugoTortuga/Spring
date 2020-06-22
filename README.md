@@ -1,4 +1,4 @@
-# Spring
+# Spring Boot / JPA
 
 Fonctionnalités du projet:
   
@@ -23,3 +23,5 @@ Fonctionnalités du projet:
   -ajout d'une adresse mail à un contact
   
   -ajout d'une adresse postale à un contact
+  
+  *Made by Hugo Malglaive
