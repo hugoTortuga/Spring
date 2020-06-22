@@ -1,9 +1,8 @@
 package com.example.model;
 
-import org.hibernate.engine.internal.Cascade;
-
 import javax.persistence.*;
-import java.util.ArrayList;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Collection;
 
 /**
@@ -12,6 +11,7 @@ import java.util.Collection;
  * @since SpringBoot
  */
 @Entity
+@XmlRootElement(name="customer")
 public class Customer {
 
 	@Id
@@ -20,6 +20,7 @@ public class Customer {
 	private String firstName;
 	private String lastName;
 
+	@XmlElement
 	public Collection<AdresseMail> getMails() {
 		return mails;
 	}
@@ -48,7 +49,7 @@ public class Customer {
 				"%d : %s %s",
 				id, firstName, lastName);
 	}
-
+	@XmlElement
 	public Collection<AdressePostale> getAdressesPostales() {
 		return adressesPostales;
 	}
@@ -56,14 +57,17 @@ public class Customer {
 	public void setAdressesPostales(Collection<AdressePostale> adressesPostales) {
 		this.adressesPostales = adressesPostales;
 	}
+	@XmlElement
 	public Long getId() {
 		return id;
 	}
 
+	@XmlElement
 	public String getFirstName() {
 		return firstName;
 	}
 
+	@XmlElement
 	public String getLastName() {
 		return lastName;
 	}

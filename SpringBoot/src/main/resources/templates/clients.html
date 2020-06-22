@@ -21,6 +21,9 @@
          function menu(){
             window.location.replace("../");
         }
+        function goToXML(e){
+            window.location.replace("../xml?action=contact&id=" + e);
+        }
     </script>
 </head>
 <body>
@@ -47,6 +50,9 @@
             <a th:onclick="'javascript:deleteRow(\''+ ${e.id} +'\');'">
                 <img  width="25" height="25" src="https://img.icons8.com/ios/24/eb6574/delete-forever.png"
                      class="icon" alt="Delete" title="Delete" >
+            </a>
+            <a th:onclick="'javascript:goToXML(\''+ ${e.id} +'\');'" class="buttonMail">
+                Voir au format XML
             </a>
 
         </td>

@@ -13,12 +13,16 @@
         function creerUser(){
             window.location.replace("../form/");
         }
+        function affichageXML(){
+            window.location.replace("../xml/");
+        }
     </script>
 </head>
 <body>
 <h1>Accueil</h1>
 <button onclick="javascript:afficherUser()">Afficher les contacts</button>
 <button onclick="javascript:creerUser()">Créer un contact</button>
+<button onclick="javascript:affichageXML()">Accéder à l'affichage XML</button>
 
 <form th:action="@{/logout}" method="post">
     <input type="submit" value="Se déconnecter"/>

@@ -56,7 +56,7 @@ public class SecuringWeb extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/",  "/clients", "/main.css", "/h2-console/**").permitAll()
+                .antMatchers("/",  "/clients", "/main.css", "/h2-console/**", "/error").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

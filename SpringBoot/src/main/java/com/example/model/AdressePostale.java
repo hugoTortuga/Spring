@@ -65,6 +65,6 @@ public class AdressePostale {
 
     @Override
     public String toString() {
-        return  numRue + ' ' +  rue + ", " + ville + " (" +  codePostal + ')';
+        return  numRue + " " +  rue + ", " + ville + " (" +  codePostal + ")";
     }
 }
